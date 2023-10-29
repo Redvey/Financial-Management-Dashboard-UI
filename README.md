@@ -2,15 +2,17 @@
 
 Finance Management Dashboard UI
 
-## Getting Started
+UI Design: Finance Management Dashboard
+Dribbble Link (you can clone exactly this): https://dribbble.com/shots/22909091-Cloud-Finance-Financial-Management-Dashboard-UI
+![image](https://github.com/Redvey/inancial-Management-Dashboard-UI/assets/128305006/0babafe7-d082-4aff-ad0e-6014deb99394)
 
-This project is a starting point for a Flutter application.
+Colors used in the design:
+Background Grey Color - rgbo(246,246,248,1)
+White Card Color - rgbo(255,255,255,1)
+Blue color - rgbo(55,124,246,1)
+Other Blue color (used in graph) - rgbo(149,224,251,1)
+For colors not mentioned (like green, red, black), use the default ones provided by the Colors class (like Colors.green).
 
-A few resources to get you started if this is your first Flutter project:
+Icons: Use icons from Icons or CupertinoIcons class in Flutter (they’re not exactly similar to the one used in the Dribbble design but you’re good with that).
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
