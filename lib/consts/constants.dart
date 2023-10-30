@@ -14,7 +14,7 @@ PreferredSize myCustomAppBar = PreferredSize(
     title:
       Text("Dashboard", style: TextStyle(color: Colors.black)),
     actions: [
-      IconButton(
+      IconButton(color: Palette.backgroundGrey,
         icon: Icon(Icons.notifications),
         onPressed: () {
           // Add your notification button logic here
