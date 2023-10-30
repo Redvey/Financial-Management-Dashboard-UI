@@ -15,7 +15,7 @@ class _TabletScaffoldState extends State<TabletScaffold> {
         appBar: myCustomAppBar,
         drawer: myDrawer,
         backgroundColor: myDefaultBackground,
-      body: Column(
+      body: const Column(
         children: [
           //overview text
           Text("Overview"),

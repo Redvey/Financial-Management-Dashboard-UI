@@ -16,7 +16,7 @@ class _MobileScaffoldState extends State<MobileScaffold> {
       appBar: myCustomAppBar,
       drawer: myDrawer,
       backgroundColor: myDefaultBackground,
-      body: Column(
+      body: const Column(
         children: [
         //overview text
         Text("Overview"),

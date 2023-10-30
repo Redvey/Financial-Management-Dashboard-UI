@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_management_dashboard/consts/palette.dart';
 
 
 class OverviewInfo {
@@ -26,34 +27,35 @@ List demoMyFiles = [
     icon: Icons.monetization_on_outlined,
     title: "Earnings",
     amount: "\$928.41",
-    color: Colors.greenAccent,
+    color: Palette.bgreen,
     percentChange: "12.8%",
     amountChange: "\$118.8",
     textColor: Colors.green,
+
   ),
   OverviewInfo(
     icon: Icons.shopping_cart_outlined,
-    title: "Earnings",
-    amount: "\$928.41",
-    color: Colors.greenAccent,
+    title: "Spendings",
+    amount: "\$169.43",
+    color: Palette.bgred,
     percentChange: "12.8%",
-    amountChange: "\$118.8",
-    textColor: Colors.green,
+    amountChange: "\$-5.2",
+    textColor: Colors.white,
   ),
   OverviewInfo(
     icon: Icons.savings_outlined,
-    title: "Earnings",
+    title: "Savings",
     amount: "\$928.41",
-    color: Colors.greenAccent,
+    color: Palette.bgreen,
     percentChange: "12.8%",
     amountChange: "\$118.8",
     textColor: Colors.green,
   ),
   OverviewInfo(
     icon: Icons.insights,
-    title: "Earnings",
+    title: "Investments",
     amount: "\$928.41",
-    color: Colors.green,
+    color: Palette.bgreen,
     percentChange: "12.8%",
     amountChange: "\$118.8",
     textColor: Colors.green,

@@ -7,13 +7,13 @@ class StatsBarChart extends StatefulWidget {
   StatsBarChart({super.key});
   final Color leftBarColor = Colors.blue.shade700;
   final Color rightBarColor = Colors.blue.shade200;
-  final Color avgColor = Color(0xFF50FF7B);
+  final Color avgColor = const Color(0xFF50FF7B);
   @override
   State<StatefulWidget> createState() => StatsBarChartState();
 }
 
 class StatsBarChartState extends State<StatsBarChart> {
-  final double width = 30;
+  final double width = 25;
 
   late List<BarChartGroupData> rawBarGroups;
   late List<BarChartGroupData> showingBarGroups;
@@ -50,11 +50,11 @@ class StatsBarChartState extends State<StatsBarChart> {
       aspectRatio: 2,
       child: Container(
         padding: const EdgeInsets.all(20),
-    decoration: const BoxDecoration(
-    color: Palette.whiteCard,
-    //   color: Colors.black,
-    borderRadius: BorderRadius.all(Radius.circular(10)),
-    ),
+        decoration: const BoxDecoration(
+          color: Palette.whiteCard,
+            // color: Colors.black,
+          borderRadius: BorderRadius.all(Radius.circular(10)),
+        ),
         child: Padding(
           padding: const EdgeInsets.all(8),
           child: Column(
@@ -63,62 +63,62 @@ class StatsBarChartState extends State<StatsBarChart> {
               Row(
                 mainAxisSize: MainAxisSize.min,
                 children: <Widget>[
-                  Text("Statistics",
-                  style: TextStyle(
-                    fontSize: 16,fontWeight: FontWeight.w400
-                  ),),
-                  SizedBox(width: 200,),
-          Row(
-            children: [
-              Row(
-                children: [
-                  Icon(Icons.circle,color:Colors.blue[700],size: 13,),
-                  const SizedBox(width: 5),
-                  const Text(
-                    "Earnings",
+                  const Text("Statistics",
                     style: TextStyle(
-                        fontSize: 14, fontWeight: FontWeight.bold),
-                  ),
-                ],
-              ),
-              const SizedBox(width: 10),
-              Row(
-                children: [
-                  Icon(Icons.circle,color:Colors.blue[400],size: 13,),
-                  const SizedBox(width: 5),
-                  const Text(
-                    "Spendings",
-                    style: TextStyle(
-                        fontSize: 14, fontWeight: FontWeight.bold),
-                  ),
-                ],
-              ),
-              const SizedBox(width: 10),
-              Container(
-                padding: const EdgeInsets.all(10),
-                decoration: const BoxDecoration(
-                  color: Palette.backgroundGrey,
-                  borderRadius: BorderRadius.all(Radius.circular(10)),
-                ),
-                child: const Row(
-                  children: [
-                    Text(
-                      "Yearly",
-                      style: TextStyle(
-                        fontSize: 14,
-                        fontWeight: FontWeight.bold,
-                      ),
-                    ),
-                    SizedBox(width: 5),
-                    Icon(Icons.keyboard_arrow_down_sharp, size: 20),
-                  ],
-                ),
-              )])],
+                        fontSize: 16,fontWeight: FontWeight.w400
+                    ),),
+                  const SizedBox(width: 200,),
+                  Row(
+                      children: [
+                        Row(
+                          children: [
+                            Icon(Icons.circle,color:Colors.blue[700],size: 13,),
+                            const SizedBox(width: 5),
+                            const Text(
+                              "Earnings",
+                              style: TextStyle(
+                                  fontSize: 14, fontWeight: FontWeight.bold),
+                            ),
+                          ],
+                        ),
+                        const SizedBox(width: 10),
+                        Row(
+                          children: [
+                            Icon(Icons.circle,color:Colors.blue[400],size: 13,),
+                            const SizedBox(width: 5),
+                            const Text(
+                              "Spendings",
+                              style: TextStyle(
+                                  fontSize: 14, fontWeight: FontWeight.bold),
+                            ),
+                          ],
+                        ),
+                        const SizedBox(width: 10),
+                        Container(
+                          padding: const EdgeInsets.all(10),
+                          decoration: const BoxDecoration(
+                            color: Palette.backgroundGrey,
+                            borderRadius: BorderRadius.all(Radius.circular(10)),
+                          ),
+                          child: const Row(
+                            children: [
+                              Text(
+                                "Yearly",
+                                style: TextStyle(
+                                  fontSize: 14,
+                                  fontWeight: FontWeight.bold,
+                                ),
+                              ),
+                              SizedBox(width: 5),
+                              Icon(Icons.keyboard_arrow_down_sharp, size: 20),
+                            ],
+                          ),
+                        )])],
               ),
               const SizedBox(
                 height: 38,
               ),
-              Expanded(
+              Expanded(flex: 1,
                 child: BarChart(
                   BarChartData(
                     maxY: 20,
@@ -181,13 +181,13 @@ class StatsBarChartState extends State<StatsBarChart> {
                         sideTitles: SideTitles(
                           showTitles: true,
                           getTitlesWidget: bottomTitles,
-                          reservedSize: 42,
+                          reservedSize: 30,
                         ),
                       ),
                       leftTitles: AxisTitles(
                         sideTitles: SideTitles(
                           showTitles: true,
-                          reservedSize: 30,
+                          reservedSize: 50,
                           interval: 1,
                           getTitlesWidget: leftTitles,
                         ),
@@ -198,15 +198,19 @@ class StatsBarChartState extends State<StatsBarChart> {
                       show: false,
                     ),
                     barGroups: showingBarGroups,
-                    gridData: FlGridData(
-                      show: true,
-                      checkToShowHorizontalLine: (value) => value % 5 == 0,
-                      getDrawingHorizontalLine: (value) => FlLine(
-                        color: Palette.backgroundGrey,
-                        strokeWidth: 1,
-                      ),
-                      drawVerticalLine: false,
-                    ),
+                      gridData: FlGridData(
+                        show: true,
+                        drawVerticalLine: true,
+                        verticalInterval: 2,
+                        getDrawingVerticalLine: (value) {
+                          return FlLine(
+                            color: Colors.grey, // Adjust color here
+                            strokeWidth: 1,
+                            dashArray: [5], // Adjust the array to change the dash size
+                          );
+                        },
+                      )
+
 
 
 
@@ -215,9 +219,7 @@ class StatsBarChartState extends State<StatsBarChart> {
                   ),
                 ),
               ),
-              const SizedBox(
-                height: 12,
-              ),
+
             ],
           ),
         ),
@@ -229,32 +231,33 @@ class StatsBarChartState extends State<StatsBarChart> {
     const style = TextStyle(
       color: Color(0xff7589a2),
       fontWeight: FontWeight.w400,
-      fontSize: 9,
+
     );
     String text;
+
+    // Adjust the labels to match the grid line positions (0, 4, 8, 12, 16, 20)
     if (value == 0) {
       text = '0';
-    } else if (value == 4) {
+    } else if (value == 5) {
       text = '\$200';
-    } else if (value == 8) {
+    } else if (value == 10) {
       text = '\$400';
-    } else if (value == 12) {
+    } else if (value == 15) {
       text = '\$600';
-    } else if (value == 16) {
-      text = '\$800';
     } else if (value == 20) {
-      text = '\$1000';
-    } else {
+      text = '\$800';
+    } else if (value == 25) {
+      text = '\$1000';} else {
       return Container();
     }
+
     return SideTitleWidget(
       axisSide: meta.axisSide,
-      space: 0,
+      space: 10,
       child: Text(text, style: style),
-
     );
-
   }
+
 
 
   Widget bottomTitles(double value, TitleMeta meta) {
@@ -271,7 +274,7 @@ class StatsBarChartState extends State<StatsBarChart> {
 
     return SideTitleWidget(
       axisSide: meta.axisSide,
-      space: 16, //margin top
+      space: 10, //margin top
       child: text,
     );
   }
