@@ -16,7 +16,7 @@ class _DesktopScaffoldState extends State<DesktopScaffold> {
   @override
   Widget build(BuildContext context) {
     return  Scaffold(
-      appBar: myCustomAppBar,
+
       backgroundColor: myDefaultBackground,
       body: Row(
         crossAxisAlignment: CrossAxisAlignment.start,

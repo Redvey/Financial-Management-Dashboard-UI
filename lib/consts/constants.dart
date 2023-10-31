@@ -1,33 +1,69 @@
+import 'dart:js';
+
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_management_dashboard/consts/palette.dart';
 import 'package:flutter_management_dashboard/util/overview_info.dart';
+import 'package:iconsax/iconsax.dart';
 
 
 
-PreferredSize myCustomAppBar = PreferredSize(
-  preferredSize: const Size.fromHeight(80.0),
-  child: AppBar(
-    centerTitle: true,
-    elevation: 0,
-    backgroundColor: Palette.whiteCard,
-
-    title:
-      Text("Dashboard", style: TextStyle(color: Colors.black)),
-    actions: [
-      IconButton(color: Palette.backgroundGrey,
-        icon: Icon(Icons.notifications),
-        onPressed: () {
-          // Add your notification button logic here
-        },
+Widget myCustomAppBar = Container(
+  width: double.infinity,
+  height: MediaQuery.of(context as BuildContext).size.width >= 1100
+      ? 80 // Desktop
+      : MediaQuery.of(context as BuildContext).size.width >= 500
+      ? 50 // Tablet
+      : 24, // Mobile
+  decoration: BoxDecoration(
+    color: Palette.whiteCard,
+  ),
+  child: Row(
+    children: [
+      DrawerHeader(
+        child: Row(
+          children: [
+            Center(
+              child: Icon(Icons.cloud, color: Colors.blue, size: 40),
+            ),
+            const SizedBox(width: 10),
+            Text(
+              "CloudFinance",
+              style: TextStyle(color: Colors.black),
+            ),
+          ],
+        ),
+      ),
+      Text(
+        "Dashboard",
+        style: TextStyle(color: Colors.black),
       ),
       Container(
-        width: 150, // Set the desired width for the search box
+        width: 450,
+        decoration: BoxDecoration(
+          color: Palette.backgroundGrey,
+          borderRadius: BorderRadius.circular(10),
+        ),
         child: TextField(
           decoration: InputDecoration(
             hintText: 'Search...',
-            border: OutlineInputBorder(borderSide: BorderSide(color: Colors.grey)),
-            contentPadding: EdgeInsets.symmetric(horizontal: 10),
+            contentPadding: EdgeInsets.all(18),
+            prefixIcon: Icon(CupertinoIcons.search),
+            border: InputBorder.none,
           ),
+        ),
+      ),
+      Container(
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(10),
+          color: Palette.backgroundGrey,
+        ),
+        child: IconButton(
+          color: Colors.black,
+          icon: Icon(CupertinoIcons.bell),
+          onPressed: () {
+            // Add your notification button logic here
+          },
         ),
       ),
       Row(
@@ -55,19 +91,19 @@ PreferredSize myCustomAppBar = PreferredSize(
 
 
 
+
+
+
+
+
+
+
 var myDrawer = Drawer(
   elevation: 0,
   backgroundColor: Palette.whiteCard,
   child: ListView(
     padding: EdgeInsets.zero,
     children: [
-      DrawerHeader(child: Row(
-        children: [
-          Center(child: Icon(Icons.cloud, color: Colors.blue, size: 40)),
-          const SizedBox(width: 10), //
-          Text("CloudFinance", style: TextStyle(color: Colors.black)),
-        ],
-      ),),
       const ListTile(
         title: Text(
           "M E N U",
