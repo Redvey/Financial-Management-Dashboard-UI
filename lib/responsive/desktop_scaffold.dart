@@ -18,12 +18,12 @@ class _DesktopScaffoldState extends State<DesktopScaffold> {
   @override
   Widget build(BuildContext context) {
     return  Scaffold(
-      drawer: MyDrawer,
       backgroundColor: myDefaultBackground,
       body: SafeArea(
         child: Row(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
+            const MyDrawer(),
             Expanded(
               child: SingleChildScrollView(
                 child: Column(
@@ -49,14 +49,14 @@ class _DesktopScaffoldState extends State<DesktopScaffold> {
                                 child: StatsBarChart(),
                               ),
                               const SizedBox(width: 15),
-                              Expanded(
+                              const Expanded(
                                 flex: 2,
                                 child: SavingsGraph(),
                               ),
                             ],
                           ),
                           const SizedBox(height: 10),
-                          LatestTransaction(),
+                          const LatestTransaction(),
                         ],
                       ),
                     ),

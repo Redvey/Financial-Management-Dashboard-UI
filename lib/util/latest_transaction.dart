@@ -3,7 +3,8 @@ import 'package:flutter_management_dashboard/consts/palette.dart';
 import '../models/transaction_data.dart';
 
 class LatestTransaction extends StatelessWidget {
-  const LatestTransaction({Key? key});
+  // ignore: non_constant_identifier_names, avoid_types_as_parameter_names
+  const LatestTransaction({super.key, Key});
 
   @override
   Widget build(BuildContext context) {
@@ -16,7 +17,7 @@ class LatestTransaction extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Row(
+          const Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Text(
@@ -44,39 +45,39 @@ class LatestTransaction extends StatelessWidget {
                   label: Row(
                     children: [
                       Checkbox(value: false, onChanged: (newValue) {}),
-                      SizedBox(width: 8), // Space between checkbox and text
-                      Text(
+                      const SizedBox(width: 8), // Space between checkbox and text
+                      const Text(
                         "To/From",
                         style: TextStyle(color: Colors.grey),
                       ),
                     ],
                   ),
                 ),
-                DataColumn(
+                const DataColumn(
                   label: Text(
                     "Date",
                     style: TextStyle(color: Colors.grey),
                   ),
                 ),
-                DataColumn(
+                const DataColumn(
                   label: Text(
                     "Description",
                     style: TextStyle(color: Colors.grey),
                   ),
                 ),
-                DataColumn(
+                const DataColumn(
                   label: Text(
                     "Amount",
                     style: TextStyle(color: Colors.grey),
                   ),
                 ),
-                DataColumn(
+                const DataColumn(
                   label: Text(
                     "Status",
                     style: TextStyle(color: Colors.grey),
                   ),
                 ),
-                DataColumn(
+                const DataColumn(
                   label: Text(
                     "Action",
                     style: TextStyle(color: Colors.grey),
@@ -110,7 +111,7 @@ DataRow recentFileDataRow(TransactionData transactionData) {
               },
             ),
           // Add checkbox
-            SizedBox(width: 12), // Space between checkbox and text
+            const SizedBox(width: 12), // Space between checkbox and text
             const Icon(
               Icons.flutter_dash,
               color: Colors.grey,

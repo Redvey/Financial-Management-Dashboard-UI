@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_management_dashboard/consts/constants.dart';
-import 'package:flutter_management_dashboard/consts/my_drawer.dart';
 import 'package:flutter_management_dashboard/util/latest_transaction.dart';
 
 import '../util/bar_graph.dart';
@@ -17,7 +16,7 @@ class _TabletScaffoldState extends State<TabletScaffold> {
   @override
   Widget build(BuildContext context) {
     return  Scaffold(
-       drawer: MyDrawer,
+
 
         backgroundColor: myDefaultBackground,
       body: Row(
@@ -45,14 +44,14 @@ class _TabletScaffoldState extends State<TabletScaffold> {
                           child: StatsBarChart(),
                         ),
                         const SizedBox(width: 15),
-                        Expanded(
+                        const Expanded(
                           flex: 1,
                           child: SavingsGraph(),
                         ),
                       ],
                     ),
                     const SizedBox(height: 10),
-                    LatestTransaction(),
+                    const LatestTransaction(),
                   ],
                 ),
               ),

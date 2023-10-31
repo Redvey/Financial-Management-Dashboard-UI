@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_management_dashboard/consts/constants.dart';
 
-import '../consts/my_drawer.dart';
 
 
 class MobileScaffold extends StatefulWidget {
@@ -15,7 +14,6 @@ class _MobileScaffoldState extends State<MobileScaffold> {
   @override
   Widget build(BuildContext context) {
     return  Scaffold(
-      drawer: MyDrawer,
       backgroundColor: myDefaultBackground,
       body: const Column(
         children: [

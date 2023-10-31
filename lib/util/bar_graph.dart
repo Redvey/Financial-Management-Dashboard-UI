@@ -60,7 +60,7 @@ class StatsBarChartState extends State<StatsBarChart> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: <Widget>[
-              Row(
+              Row(mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 mainAxisSize: MainAxisSize.min,
                 children: <Widget>[
                   const Text("Statistics",
@@ -203,7 +203,7 @@ class StatsBarChartState extends State<StatsBarChart> {
                         drawVerticalLine: true,
                         verticalInterval: 2,
                         getDrawingVerticalLine: (value) {
-                          return FlLine(
+                          return const FlLine(
                             color: Colors.grey, // Adjust color here
                             strokeWidth: 1,
                             dashArray: [5], // Adjust the array to change the dash size
