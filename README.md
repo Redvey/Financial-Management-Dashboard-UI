@@ -5,8 +5,8 @@ A sleek Finance Management Dashboard web app developed using Flutter-Dart, speci
 ### Features:
 - **Design Link:** [Design Link](![image](https://github.com/Redvey/inancial-Management-Dashboard-UI/assets/128305006/0babafe7-d082-4aff-ad0e-6014deb99394))) - View the initial design used as inspiration.
 - **Packages Utilized:**
-  - **fl_chart:** Integrated for comprehensive chart and graph representation.
-  - **cupertino_icons:** Leveraged for incorporating iOS style icons.
+  - **[fl_chart](https://pub.dev/packages/fl_chart):** Integrated for comprehensive chart and graph representation.
+  - **[cupertino_icons](https://pub.dev/packages/cupertino_icons):** Leveraged for incorporating iOS style icons.
   - **Other Widgets:** Utilized grid view, list tiles, drawer, etc., to enhance user interaction and navigation.
 
 ### Progress and Learning Curve:
@@ -44,6 +44,9 @@ flutter pub get
 flutter run -d chrome
 ```
 dribble link:https://dribbble.com/shots/22909091-Cloud-Finance-Financial-Management-Dashboard-UI
+
 Enjoy managing your finances with this intuitive dashboard! Your feedback and contributions are highly appreciated.
+----
+
 
 
