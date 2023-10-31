@@ -19,12 +19,13 @@ This dashboard is currently optimized for desktop view, catering to a beginner-l
 ### Screenshots:
 Here is a snapshot showcasing the current desktop view of the Finance Management Dashboard:
 
-![Desktop View](![image](https://github.com/Redvey/Financial-Management-Dashboard-UI/assets/128305006/ac680fac-b920-4202-bd2c-3b556414a35f)
-)
+<img width="1469" alt="Screenshot 2023-10-31 at 7 02 05 PM" src="https://github.com/Redvey/Financial-Management-Dashboard-UI/assets/128305006/12c293ad-11be-4384-b830-4fb596c4fa41">
+
+
 
 Feel free to explore the codebase to understand the implementation and contribute to its evolution!
 
-For further details, suggestions, or collaboration opportunities, reach out to ([Me](https://www.linkedin.com/in/roopam10)).
+For further details, suggestions, or collaboration opportunities, reach out to [me](https://www.linkedin.com/in/roopam10).
 
 #### How to Run:
 To run this Flutter web app, clone the repository and follow these steps:
@@ -38,7 +39,7 @@ flutter pub get
 # Run the application
 flutter run -d chrome
 ```
-
+dribble link:https://dribbble.com/shots/22909091-Cloud-Finance-Financial-Management-Dashboard-UI
 Enjoy managing your finances with this intuitive dashboard! Your feedback and contributions are highly appreciated.
 
 
