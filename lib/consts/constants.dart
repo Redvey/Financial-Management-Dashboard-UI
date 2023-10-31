@@ -41,55 +41,68 @@ Widget myCustomAppBar(BuildContext context) {
         SizedBox(width: 40,),
         Text(
           "Dashboard",
-          style: TextStyle(color: Colors.black),
+          style: TextStyle(color: Colors.black,
+          fontSize: 20,
+          fontWeight: FontWeight.w500),
         ),
-        SizedBox(width: 100,),
         //Searchbox
-        Container(
-          width: 350,
-          decoration: BoxDecoration(
-            color: Palette.backgroundGrey,
-            borderRadius: BorderRadius.circular(10),
-          ),
-          child: TextField(
-            decoration: InputDecoration(
-              hintText: 'Search...',
-              contentPadding: EdgeInsets.all(18),
-              prefixIcon: Icon(CupertinoIcons.search),
-              border: InputBorder.none,
-            ),
-          ),
-        ),
-        Container(
-          decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(10),
-            color: Palette.backgroundGrey,
-          ),
-          child: IconButton(
-            color: Colors.black,
-            icon: Icon(Icons.notifications), // Replace with CupertinoIcons.bell
-            onPressed: () {
-              // Add your notification button logic here
-            },
-          ),
-        ),
         Row(
           children: [
-            CircleAvatar(
-              backgroundImage: NetworkImage('url_to_profile_image'),
-              radius: 15,
-            ),
-            const SizedBox(width: 8),
-            Padding(
-              padding: const EdgeInsets.only(right: 15),
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text("Name", style: TextStyle(color: Colors.black)),
-                  Text("email@example.com", style: TextStyle(color: Colors.black)),
-                ],
+            Container(
+              width: 350,
+              decoration: BoxDecoration(
+                color: Palette.backgroundGrey,
+                borderRadius: BorderRadius.circular(10),
               ),
+              child: TextField(
+                decoration: InputDecoration(
+                  hintText: 'Search...',
+                  contentPadding: EdgeInsets.all(18),
+                  prefixIcon: Icon(CupertinoIcons.search),
+                  border: InputBorder.none,
+                ),
+              ),
+            ),
+            SizedBox(width: 10,),
+            Container(
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(10),
+                color: Palette.backgroundGrey,
+              ),
+              child: IconButton(
+                color: Colors.black,
+                icon: Icon(Icons.notifications), // Replace with CupertinoIcons.bell
+                onPressed: () {
+                  // Add your notification button logic here
+                },
+              ),
+            ),
+            SizedBox(width: 10,),
+            Container(
+              height: 30,
+              width: 1,
+              color: Palette.backgroundGrey,
+            ),
+            SizedBox(width: 10,),
+            Row(
+              children: [
+                CircleAvatar(
+                  backgroundImage: NetworkImage('url_to_profile_image'),
+                  radius: 15,
+                ),
+                const SizedBox(width: 8),
+                Padding(
+                  padding: const EdgeInsets.only(right: 15),
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text("Graham Alexander", style: TextStyle(color: Colors.black)),
+                      Text("graham.a@email.com", style: TextStyle(color: Colors.black)),
+                    ],
+                  ),
+                ),
+              ],
             ),
           ],
         ),
@@ -97,6 +110,94 @@ Widget myCustomAppBar(BuildContext context) {
     ),
   );
 }
+
+
+var MyDrawer = Drawer(
+  elevation: 0,
+  backgroundColor: Palette.whiteCard,
+  child: ListView(
+    padding: EdgeInsets.zero,
+    children: [
+      ListTile(
+        title: Text(
+          "M E N U",
+          style: TextStyle(
+            fontWeight: FontWeight.bold,
+            fontSize: 18,
+          ),
+        ),
+        contentPadding: EdgeInsets.symmetric(horizontal: 16),
+      ),
+      ListTile(
+        contentPadding: EdgeInsets.symmetric(horizontal: 16),
+        leading: Icon(Icons.window_sharp),
+        title: Text("Overview"),
+      ),
+      ListTile(
+        contentPadding: EdgeInsets.symmetric(horizontal: 16),
+        leading: Icon(Icons.insert_chart),
+        title: Text("Statistics"),
+      ),
+      ListTile(
+        contentPadding: EdgeInsets.symmetric(horizontal: 16),
+        leading: Icon(Icons.savings),
+        title: Text("Savings"),
+      ),
+      ListTile(
+        contentPadding: EdgeInsets.symmetric(horizontal: 16),
+        leading: Icon(Icons.pie_chart_rounded),
+        title: Text("Portfolios"),
+        trailing: Icon(Icons.keyboard_arrow_down_outlined),
+      ),
+      ListTile(
+        contentPadding: EdgeInsets.symmetric(horizontal: 16),
+        leading: Icon(Icons.message),
+        title: Text("Messages"),
+      ),
+      ListTile(
+        contentPadding: EdgeInsets.symmetric(horizontal: 16),
+        leading: Icon(Icons.table_rows_rounded),
+        title: Text("Transactions"),
+      ),
+      ListTile(
+        title: Text(
+          "G E N E R A L",
+          style: TextStyle(
+            fontWeight: FontWeight.bold,
+            fontSize: 18,
+          ),
+        ),
+        contentPadding: EdgeInsets.symmetric(horizontal: 16),
+      ),
+      ListTile(
+        contentPadding: EdgeInsets.symmetric(horizontal: 16),
+        leading: Icon(Icons.settings_rounded),
+        title: Text("Settings"),
+      ),
+      ListTile(
+        contentPadding: EdgeInsets.symmetric(horizontal: 16),
+        leading: Icon(Icons.photo),
+        title: Text("Appearances"),
+      ),
+      ListTile(
+        contentPadding: EdgeInsets.symmetric(horizontal: 16),
+        leading: Icon(Icons.help),
+        title: Text("Need Help?"),
+      ),
+      SizedBox(height: 90),
+      ListTile(
+        contentPadding: EdgeInsets.symmetric(horizontal: 16),
+        leading: Icon(Icons.logout),
+        title: Text("Log Out"),
+        onTap: () {
+          // Implement log out functionality here
+        },
+      ),
+    ],
+  ),
+);
+
+
 
 
 

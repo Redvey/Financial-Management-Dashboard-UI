@@ -18,7 +18,7 @@ class _DesktopScaffoldState extends State<DesktopScaffold> {
   @override
   Widget build(BuildContext context) {
     return  Scaffold(
-      drawer: const MyDrawer(),
+      drawer: MyDrawer,
       backgroundColor: myDefaultBackground,
       body: SafeArea(
         child: Row(
@@ -70,5 +70,6 @@ class _DesktopScaffoldState extends State<DesktopScaffold> {
     );
   }
 }
+
 
 
